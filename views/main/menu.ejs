@@ -26,10 +26,30 @@
             </div>
         </div>
         <div id="board">
-            <h1>식단표</h1>
+            <h1 style="text-align: center">이번주 식단표</h1>
+
+            <table id="tb">
+                <thead>
+                    <tr>
+                        <th>월</th>
+                        <th>화</th>
+                        <th>수</th>
+                        <th>목</th>
+                        <th>금</th>
+                        <th>토</th>
+                        <th>일</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+
+            <div id="menu-info"></div>
         </div>
     </div>
 
     <script src="/js/common.js"></script>
+    <script>
+        setMenu()
+    </script>
 </body>
 </html>

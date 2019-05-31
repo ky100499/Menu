@@ -99,3 +99,52 @@ function addMenu(foods) {
         document.getElementById("board").append(item)
     }
 }
+
+function setMenu() {
+    let tbody = document.getElementById("tb").children[1]
+
+    let cal = 0, price = 0
+
+    let tr = document.createElement("tr")
+    for (let i = 0; i < 7; i++) {
+        let td = document.createElement("td")
+        let rand = parseInt(Math.random() * mains.length)
+        td.innerText = mains[rand].name
+        cal += mains[rand].cal
+        price += mains[rand].price
+        tr.append(td)
+    }
+    tbody.append(tr)
+
+    for (let j = 0; j < 2; j++) {
+        tr = document.createElement("tr")
+        for (let i = 0; i < 7; i++) {
+            let td = document.createElement("td")
+            let rand = parseInt(Math.random() * sides.length)
+            td.innerText = sides[rand].name
+            cal += sides[rand].cal
+            price += sides[rand].price
+            tr.append(td)
+        }
+        tbody.append(tr)
+    }
+
+    tr = document.createElement("tr")
+    for (let i = 0; i < 7; i++) {
+        let td = document.createElement("td")
+        let rand = parseInt(Math.random() * fruits.length)
+        td.innerText = fruits[rand].name
+        cal += fruits[rand].cal
+        price += fruits[rand].price
+        tr.append(td)
+    }
+    tbody.append(tr)
+
+    let info = document.getElementById("menu-info")
+    let h2 = document.createElement("h2")
+    h2.innerText = "하루 평균 열량: " + parseInt(cal / 7) + "kcal"
+    info.append(h2)
+    h2 = document.createElement("h2")
+    h2.innerText = "이번주 식단 가격: " + price + "원"
+    info.append(h2)
+}
